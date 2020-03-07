@@ -4,7 +4,23 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        //构建接入maven
+        mavenCentral()
+        maven{
+            url 'http://localhost:8081/repository/audio_release/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
+        maven{
+            url 'http://localhost:8081/repository/audio_snapshots/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
@@ -18,6 +34,22 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //工程接入maven仓库
+        mavenCentral()
+        maven{
+            url 'http://localhost:8081/repository/audio_release/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
+        maven{
+            url 'http://localhost:8081/repository/audio_snapshots/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
         
     }
 }
