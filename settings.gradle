@@ -1,2 +1,2 @@
-include ':app', ':audio_voice', ':lib_audio', ':lib_vedio'
+include ':app', ':audio_voice', ':lib_audio', ':lib_video', ':lib_commin_ui', ':lib_network', ':lib_image_loader', ':lib_update', ':lib_pullalive', ':lib_webview', ':lib_qrcode', ':lib_share'
 rootProject.name='audio_business'
