@@ -1,18 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
-
+    compileSdkVersion this.rootProject.android.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.audio_voice"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId this.rootProject.android.applicationId
+        minSdkVersion this.rootProject.android.minSdkVersion
+        targetSdkVersion this.rootProject.android.targetSdkVersion
+        versionCode this.rootProject.android.versionCode
+        versionName this.rootProject.android.versionName
+        //开启分包
+        multiDexEnabled this.rootProject.android.multiDexEnabled
     }
 
     buildTypes {
@@ -27,8 +25,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    compileOnly this.rootProject.depsLibs.appcompat
 }
